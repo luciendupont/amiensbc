@@ -27,8 +27,7 @@ class Formedeboxe
     #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2)]
     private ?string $prix = null;
 
-    #[ORM\ManyToOne(inversedBy: 'formedeboxe')]
-    private ?Boxe $boxe = null;
+
 
     #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2)]
     private ?string $total = null;
@@ -82,18 +81,6 @@ class Formedeboxe
     public function setPrix(string $prix): static
     {
         $this->prix = $prix;
-
-        return $this;
-    }
-
-    public function getBoxe(): ?Boxe
-    {
-        return $this->boxe;
-    }
-
-    public function setBoxe(?Boxe $boxe): static
-    {
-        $this->boxe = $boxe;
 
         return $this;
     }
